@@ -5,6 +5,11 @@ import { Portfolio } from './pages/Portfolio.tsx'
 import { NotFound } from './pages/NotFound.tsx'
 import { useLenis } from './hooks/useLenis.ts'
 
+export function to_id(id: string) {
+  const el = document.getElementById(id);
+  if (el) el.scrollIntoView({ behavior: "smooth" });
+}
+
 function App() {
   useLenis();
   const [ready, setReady] = useState(false)

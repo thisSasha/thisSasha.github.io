@@ -1,9 +1,6 @@
-type Props = {};
+import { to_id } from "../App";
 
-function to_id(id: string) {
-    const el = document.getElementById(id);
-    if (el) el.scrollIntoView({ behavior: "smooth" });
-}
+type Props = {};
 
 export function MainHeader(props: Props) {
     return (

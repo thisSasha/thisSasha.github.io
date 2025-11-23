@@ -43,12 +43,12 @@ export function Portfolio(props: Props) {
         opacityEls.forEach(el => el.classList.add('opacity-0'))
         const onScroll = () => {
             opacityEls.forEach(el => {
-                if (el && el.getBoundingClientRect().top < window.innerHeight * 0.5)
+                if (el && el.getBoundingClientRect().top < window.innerHeight * 0.65)
                     el.classList.remove('opacity-0');
             })
             Object.keys(onscrollText).forEach(key => {
                 const el = document.getElementById(key);
-                if (el && el.getBoundingClientRect().top < window.innerHeight * 0.6 && el.textContent == 'ㅤ') {
+                if (el && el.getBoundingClientRect().top < window.innerHeight * 0.65 && el.textContent == 'ㅤ') {
                     typeEffect(el, onscrollText[key].split(''));
                 }
 
