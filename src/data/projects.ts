@@ -11,7 +11,7 @@ export type ProjectsType = ProjectCardType[];
 
 export const projects: ProjectsType = [
   {
-    "img": "/projects/tanon.png",
+    "img": "/projects/tanon/preview.png",
     "title": "Т-Анон",
     "description": "Телеграм-бот для отправки анонимных сообщений с раличными фичами. В данный момент бот неактивен, так как нет сервера",
     "type": "Пет-проект",
@@ -20,7 +20,7 @@ export const projects: ProjectsType = [
     "links": { "Ссылка на бота": "https://t.me/t_anonim_bot" }
   },
   {
-    "img": "/projects/tfm.png",
+    "img": "/projects/tfm/preview.png",
     "title": "TFM File Manager",
     "description": "Быстрый файловый менеджер для использования в консоли. На данный момент не закончен",
     "type": "Пет-проект",
@@ -28,7 +28,7 @@ export const projects: ProjectsType = [
     "using": ["devicon-rust-plain"],
   },
   {
-    "img": "/projects/energypark_copy.png",
+    "img": "/projects/energypark_copy/preview.png",
     "title": "Energy Park",
     "description": "Полная копия дизайна и контента с сайта на ванильном js",
     "type": "Заказ (Копия сайта)",
@@ -37,7 +37,7 @@ export const projects: ProjectsType = [
     "links": { "Копия": "https://energypark-copy.onrender.com/", "Оригинал": "https://energy-park.co.uk" }
   },
   {
-    "img": "/projects/finnal.png",
+    "img": "/projects/finnal/preview.png",
     "title": "Fin-nal",
     "description": "Сайт-лендинг для компании ООО 'Финансы и налоги'",
     "type": "Заказ (Лендинг)",
@@ -46,7 +46,7 @@ export const projects: ProjectsType = [
     "links": { "Сайт": "https://fin-nal.by" }
   },
   {
-    "img": "/projects/response_tgbot.png",
+    "img": "/projects/response_tgbot/preview.png",
     "title": "Отклик на вакансию",
     "description": "Создание простого телеграм-бота. Функции: Админы могут создавать посты в различных тгк с кнопкой 'Откликнуться', а пользователи могут отправлять свои заявки",
     "type": "Заказ (Тг-бот)",
@@ -55,7 +55,7 @@ export const projects: ProjectsType = [
     "links": { "Github": "https://github.com/thisSasha/response-tg-bot" }
   },
   {
-    "img": "/projects/fxfortrader.png",
+    "img": "/projects/fxfortrader/preview.png",
     "title": "FX For Trader",
     "description": "'Повтори вот этот сайт по вот этому макету но сделай по-своему' - Примерно такое было ТЗ",
     "type": "Заказ (Новый сайт)",
@@ -64,7 +64,7 @@ export const projects: ProjectsType = [
     "links": { "Ссылка на сайт": "https://thisSasha.github.io/fx-for-trader" }
   },
   {
-    "img": "/projects/trustwallet_copy.png",
+    "img": "/projects/trustwallet_copy/preview.png",
     "title": "Trust wallet (Копия)",
     "description": "Полная копия страницы расширения и стартовой страницы (По требованию заказчика, пришлось переделать расширение в статичны сайт)",
     "type": "Заказ (Копия сайта)",
@@ -73,7 +73,7 @@ export const projects: ProjectsType = [
     "links": { "Github": "https://github.com/thisSasha/trust-wallet_copy" }
   },
   {
-    "img": "/projects/atom_copy.png",
+    "img": "/projects/atom_copy/preview.png",
     "title": "Atom Mobility (Копия)",
     "description": "Копия дизайна и контента",
     "type": "Заказ (Копия сайта)",
@@ -82,7 +82,7 @@ export const projects: ProjectsType = [
     "links": { "Github": "https://github.com/thisSasha/atom_copy/" }
   },
   {
-    "img": "/projects/practice_copy.png",
+    "img": "/projects/practice_copy/preview.png",
     "title": "Practice Ink (Копия)",
     "description": "Копия дизайна и контента",
     "type": "Заказ (Копия сайта)",
@@ -91,7 +91,7 @@ export const projects: ProjectsType = [
     "links": { "Github": "http://github.com/thisSasha/practice-ink_copy/" }
   },
   {
-    "img": "/projects/credexa_copy.png",
+    "img": "/projects/credexa_copy/preview.png",
     "title": "Credexa (Копия)",
     "description": "Копия дизайна и контента",
     "type": "Заказ (Копия сайта)",
@@ -100,7 +100,7 @@ export const projects: ProjectsType = [
     "links": { "Github": "https://github.com/thisSasha/credexa_copy" }
   },
   {
-    "img": "/projects/trihologs_copy.png",
+    "img": "/projects/trihologs_copy/preview.png",
     "title": "Trihologs (Копия с доработкой)",
     "description": "Скопировать сайт, но улучшить его дизайн",
     "type": "Заказ (Копия + доработка)",
@@ -109,7 +109,7 @@ export const projects: ProjectsType = [
     "links": { "Github": "https://github.com/thisSasha/trihologs_copy", "Оригинальный сайт": "https://trihologs.lv/" }
   },
   {
-    "img": "/projects/patriot_web.png",
+    "img": "/projects/patriot_web/preview.png",
     "title": "Patriot",
     "description": "Вёрстка сайта по макету. Макет был основой, но кроме него присуствовал прототип, которому также нужно было следовать. Поэтому сайт отличается от макета",
     "type": "Заказ (Новый сайт)",
@@ -130,7 +130,7 @@ export const projects: ProjectsType = [
     "links": {}
   },
   {
-    "img": "/projects/metaparser.png",
+    "img": "/projects/metaparser/preview.png",
     "title": "Meta Parser",
     "description": "Фронтенд и бэкенд сайта, который получает meta с указанного сайта, рисует дерево субстраниц и выводит всё красивыми картинками",
     "type": "Заказ (Новый сайт)",
@@ -139,7 +139,7 @@ export const projects: ProjectsType = [
     "links": { "Сайт": "http://193.160.208.54:8000/" }
   },
   {
-    "img": "/projects/math.png",
+    "img": "/projects/math/preview.png",
     "title": "Math",
     "description": "Это мой телеграм-канал на тему математики. Это также мой проект, поэтому он здесь",
     "type": "Telegram-канал",
@@ -148,7 +148,7 @@ export const projects: ProjectsType = [
     "links": { "Канал": "https://t.me/thisMath" }
   },
   {
-    "img": "/projects/menunova.png",
+    "img": "/projects/menunova/preview.png",
     "title": "Menu Nova",
     "description": "Проект для кафе и ресторанов. Онлайн меню и заказ, быстрая настройка под конкретный ресторан (Планирую переписать на Vue/React)",
     "type": "Пет-проект",
