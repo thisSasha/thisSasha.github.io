@@ -10,6 +10,7 @@ const maxProjects = 6;
 export function MainProjects(props: Props) {
     const [moreCards, setMoreCards] = useState(false);
     const [showAll, setShowAll] = useState(false);
+    
     return (
         <section className="portfolio py-20" id="portfolio">
             <div className="container pb-10">
