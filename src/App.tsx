@@ -10,10 +10,28 @@ function App() {
   const [ready, setReady] = useState(false)
 
   useEffect(() => {
-    const onReady = () => setReady(true)
-    if (document.readyState === "complete") onReady()
-    else window.addEventListener("load", onReady, { once: true })
+    const imgs = Array.from(document.images)
+    if (imgs.length === 0) {
+      setReady(true)
+      return
+    }
+
+    let loaded = 0
+
+    const check = () => {
+      loaded += 1
+      if (loaded === imgs.length) setReady(true)
+    }
+
+    imgs.forEach(img => {
+      if (img.complete) check()
+      else {
+        img.addEventListener("load", check, { once: true })
+        img.addEventListener("error", check, { once: true })
+      }
+    })
   }, [])
+
 
   if (!ready)
     return (
