@@ -9,9 +9,13 @@ export function MainProjectCard(props: { card: ProjectCardType }) {
 
     useEffect(() => {
         let el = typeRef.current;
-        if (el && el.scrollWidth > el.clientWidth) {
+        if (
+            el &&
+            (el.scrollWidth > el.clientWidth || window.matchMedia("(max-width: 768px)").matches)
+        ) {
             setIsOverflow(true);
         }
+
     }, []);
 
     return (
