@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+    rel="stylesheet">
+  <script src="https://kit.fontawesome.com/2c09f7fb88.js" crossorigin="anonymous"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>this-sasha</title>
+  <script type="module" crossorigin src="/assets/index-uZutS4Wa.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-D3OOBRro.css">
+</head>
+
+<body>
+  <div id="root"></div>
+  <script>
+    let full = (document.title || '').replace(/\|$/, '') || '•'
+    let base = full, cur = false, paused = false
+    const C = '|', ZW = '\u2060'
+    const T = { blink: 500, erase: 400, type: 400, holdBefore: 8000, holdMin: 600, holdAfter: 800 }
+    const view = () => document.title = paused ? 'tds' : ((base || ZW) + (cur ? C : ''))
+    setInterval(() => { if (!paused) { cur = !cur; view() } }, T.blink)
+    document.addEventListener('visibilitychange', () => { paused = document.hidden; view() })
+    const sleep = ms => new Promise(r => setTimeout(r, ms))
+      ; (async function run() {
+        for (; ;) {
+          await sleep(T.holdBefore)
+          while (!paused && base.length > 1) { base = base.slice(0, -1); view(); await sleep(T.erase) }
+          await sleep(T.holdMin)
+          for (let i = base.length + 1; i <= full.length; i++) { if (paused) break; base = full.slice(0, i); view(); await sleep(T.type) }
+          base = full; view(); await sleep(T.holdAfter)
+        }
+      })();
+    view()
+  </script>
+</body>
+
+</html>
