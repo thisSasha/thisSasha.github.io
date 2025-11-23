@@ -37,6 +37,7 @@
     --color-primary: #5F16E9;
     --font-main: 'Rubik', sans-serif;
     --font-header: 'Montserrat', monospace;
+    --font-decor: 'Rubik Mono One', 'Montserrat';
     --text-h1: 4.2rem;
     --text-h2: 2.4rem;
     --text-h3: 1.6rem;
@@ -85,6 +86,7 @@ body {
         inset 1px 1px rgba(255, 255, 255, calc(0.05 * var(--strength))),
         0 4px 30px rgba(0, 0, 0, calc(0.25 * var(--strength)));
 }
+
 
 
 .hover-underline {
