@@ -1,0 +1,180 @@
+@import "tailwindcss";
+
+@theme {
+    --color-bg: #181a1b;
+    --color-fg: #fff;
+    --color-bg-reverse: #e7e5e4;
+    --color-fg-reverse: #000;
+    --color-accent: #8F12DC;
+    --color-accent-light: #B563E8;
+    --color-secondary: #A008A8;
+    --color-primary: #5F16E9;
+    --font-main: 'Rubik', sans-serif;
+    --font-header: 'Montserrat', monospace;
+    --text-h1: 4.2rem;
+    --text-h2: 2.4rem;
+    --text-h3: 1.6rem;
+    --text-h4: 1.1rem;
+}
+
+#root {
+    @apply bg-bg text-fg;
+}
+
+body {
+    @apply font-main;
+}
+
+.container {
+    @apply lg:w-[96%] w-full mx-auto max-w-[1400px];
+}
+
+.glass {
+    --bg: rgba(255, 255, 255, 0.08);
+    --strength: 1;
+    @apply bg-[var(--bg)] overflow-hidden rounded-4xl;
+    backdrop-filter: blur(calc(12px * var(--strength))) saturate(calc(180% * var(--strength)));
+    -webkit-backdrop-filter: blur(calc(12px * var(--strength))) saturate(calc(180% * var(--strength)));
+    border: 1px solid color-mix(in srgb, var(--color-fg) calc(20% * var(--strength)), transparent);
+    box-shadow:
+        inset -1px -1px rgba(255, 255, 255, calc(0.15 * var(--strength))),
+        inset 1px 1px rgba(255, 255, 255, calc(0.05 * var(--strength))),
+        0 4px 30px rgba(0, 0, 0, calc(0.25 * var(--strength)));
+}
+
+
+.hover-underline {
+    @apply relative;
+}
+
+.hover-underline::after {
+    content: "";
+    @apply absolute left-0 bottom-0 h-px w-full scale-x-0 origin-right transition-transform duration-400 ease-in-out;
+}
+
+.hover-underline:hover::after {
+    @apply scale-x-100 origin-left;
+}
+
+.underline-transition {
+    @apply relative;
+}
+
+.underline-transition::after {
+    content: "";
+    @apply absolute left-0 bottom-0 h-px w-full transition-transform will-change-transform duration-300 -translate-y-1/2;
+}
+
+.underline-transition:hover::after {
+    @apply translate-y-full;
+}
+
+.bg-transition {
+    background-size: cover;
+    transition: 300ms;
+}
+
+.bg-transition:hover {
+    background-size: 110%;
+}
+
+
+
+/* HEADER */
+
+.header {
+    background-size: 160%;
+    background: url('/header/bg.png');
+    background-attachment: fixed;
+    background-position: center;
+    animation: header__init 1200ms forwards cubic-bezier(0.3, 0.8, 0.5, 1);
+    will-change: background-size;
+}
+
+@media (orientation: portrait) {
+    .header {
+        background-size: 150%;
+    }
+}
+
+
+@keyframes header__init {
+    from {
+        background-size: 160%;
+    }
+
+    4% {
+        background-size: 160%;
+    }
+
+    to {
+        background-size: 180%;
+    }
+}
+
+.header__card {
+    width: 0;
+    --w: 60vw;
+    --h: 50vh;
+    height: var(--h);
+    bottom: 100vh;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    animation: header__card__init 3.3s forwards cubic-bezier(0.3, 1, 0.5, 1);
+    --opacity: 0;
+    --translate-y: 20%;
+    @apply absolute flex flex-col items-center justify-center gap-18;
+}
+
+.header__card * {
+    opacity: var(--opacity);
+    transform: translateY(var(--translate-y));
+    transition: 300ms;
+}
+
+@keyframes header__card__init {
+    from {
+        bottom: calc(100vh + var(--h));
+        width: 4vw;
+    }
+
+    4% {
+        bottom: calc(100vh + var(--h));
+        width: 4vw;
+    }
+
+    33% {
+        width: 4vw;
+        bottom: 50vh;
+    }
+
+    66% {
+        width: var(--w);
+        bottom: 50vh;
+        --opacity: 0;
+        --translate-y: 20%;
+    }
+
+    to {
+        width: var(--w);
+        bottom: 50vh;
+        --opacity: 1;
+        --translate-y: 0;
+    }
+}
+
+.header__button {
+    @apply px-9 py-4 border-2 text-xl border-fg rounded-full bg-transparent text-fg hover:bg-fg hover:text-fg-reverse hover:cursor-pointer font-medium
+}
+
+.navbar {
+    --bg: color-mix(in srgb, var(--color-bg) 50%, transparent);
+}
+
+.navbar:not(.active) {
+    @apply -translate-y-[calc(100%+.5rem)];
+}
+
+.navbar__link {
+    @apply cursor-pointer transition duration-300 hover:text-accent-light;
+}

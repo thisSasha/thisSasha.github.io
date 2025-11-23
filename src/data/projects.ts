@@ -1,0 +1,159 @@
+export type ProjectCardType = {
+  title: string;
+  description: string;
+  type: string;
+  using: string[];
+  img?: string;
+  filters?: string[];
+  links?: { [key: string]: string };
+};
+export type ProjectsType = ProjectCardType[];
+
+export const projects: ProjectsType = [
+  {
+    "img": "/projects/tanon.png",
+    "title": "Т-Анон",
+    "description": "Телеграм-бот для отправки анонимных сообщений с раличными фичами. В данный момент бот неактивен, так как нет сервера",
+    "type": "Пет-проект",
+    "using": ["devicon-python-plain", "fab fa-telegram"],
+    "filters": ["Python", "Telegram", "Aiogram"],
+    "links": { "Ссылка на бота": "https://t.me/t_anonim_bot" }
+  },
+  {
+    "img": "/projects/tfm.png",
+    "title": "TFM File Manager",
+    "description": "Быстрый файловый менеджер для использования в консоли. На данный момент не закончен",
+    "type": "Пет-проект",
+    "filters": ["Rust"],
+    "using": ["devicon-rust-plain"],
+  },
+  {
+    "img": "/projects/energypark_copy.png",
+    "title": "Energy Park",
+    "description": "Полная копия дизайна и контента с сайта на ванильном js",
+    "type": "Заказ (Копия сайта)",
+    "using": ["devicon-javascript-plain"],
+    "filters": ["Vanilla JS", "JavaScript", "Vanilla CSS"],
+    "links": { "Копия": "https://energypark-copy.onrender.com/", "Оригинал": "https://energy-park.co.uk" }
+  },
+  {
+    "img": "/projects/finnal.png",
+    "title": "Fin-nal",
+    "description": "Сайт-лендинг для компании ООО 'Финансы и налоги'",
+    "type": "Заказ (Лендинг)",
+    "using": ["devicon-javascript-plain"],
+    "filters": ["Vanilla JS", "JavaScript", "Vanilla CSS"],
+    "links": { "Сайт": "https://fin-nal.by" }
+  },
+  {
+    "img": "/projects/response_tgbot.png",
+    "title": "Отклик на вакансию",
+    "description": "Создание простого телеграм-бота. Функции: Админы могут создавать посты в различных тгк с кнопкой 'Откликнуться', а пользователи могут отправлять свои заявки",
+    "type": "Заказ (Тг-бот)",
+    "using": ["devicon-python-plain"],
+    "filters": ["Python", "Telegram", "Aiogram"],
+    "links": { "Github": "https://github.com/thisSasha/response-tg-bot" }
+  },
+  {
+    "img": "/projects/fxfortrader.png",
+    "title": "FX For Trader",
+    "description": "'Повтори вот этот сайт по вот этому макету но сделай по-своему' - Примерно такое было ТЗ",
+    "type": "Заказ (Новый сайт)",
+    "using": ["devicon-javascript-plain"],
+    "filters": ["Vanilla JS", "JavaScript", "Vanilla CSS"],
+    "links": { "Ссылка на сайт": "https://thisSasha.github.io/fx-for-trader" }
+  },
+  {
+    "img": "/projects/trustwallet_copy.png",
+    "title": "Trust wallet (Копия)",
+    "description": "Полная копия страницы расширения и стартовой страницы (По требованию заказчика, пришлось переделать расширение в статичны сайт)",
+    "type": "Заказ (Копия сайта)",
+    "using": ["devicon-javascript-plain"],
+    "filters": ["Vanilla JS", "Extension", "Vanilla CSS", "JavaScript"],
+    "links": { "Github": "https://github.com/thisSasha/trust-wallet_copy" }
+  },
+  {
+    "img": "/projects/atom_copy.png",
+    "title": "Atom Mobility (Копия)",
+    "description": "Копия дизайна и контента",
+    "type": "Заказ (Копия сайта)",
+    "using": ["devicon-javascript-plain", "devicon-tailwindcss-plain"],
+    "filters": ["Vanilla JS", "Tailwind CSS", "JavaScript"],
+    "links": { "Github": "https://github.com/thisSasha/atom_copy/" }
+  },
+  {
+    "img": "/projects/practice_copy.png",
+    "title": "Practice Ink (Копия)",
+    "description": "Копия дизайна и контента",
+    "type": "Заказ (Копия сайта)",
+    "using": ["devicon-javascript-plain"],
+    "filters": ["Vanilla JS", "JavaScript"],
+    "links": { "Github": "http://github.com/thisSasha/practice-ink_copy/" }
+  },
+  {
+    "img": "/projects/credexa_copy.png",
+    "title": "Credexa (Копия)",
+    "description": "Копия дизайна и контента",
+    "type": "Заказ (Копия сайта)",
+    "using": ["devicon-javascript-plain"],
+    "filters": ["Vanilla JS", "Vanilla CSS", "JavaScript"],
+    "links": { "Github": "https://github.com/thisSasha/credexa_copy" }
+  },
+  {
+    "img": "/projects/trihologs_copy.png",
+    "title": "Trihologs (Копия с доработкой)",
+    "description": "Скопировать сайт, но улучшить его дизайн",
+    "type": "Заказ (Копия + доработка)",
+    "using": ["devicon-javascript-plain"],
+    "filters": ["Vanilla JS", "JavaScript", ""],
+    "links": { "Github": "https://github.com/thisSasha/trihologs_copy", "Оригинальный сайт": "https://trihologs.lv/" }
+  },
+  {
+    "img": "/projects/patriot_web.png",
+    "title": "Patriot",
+    "description": "Вёрстка сайта по макету. Макет был основой, но кроме него присуствовал прототип, которому также нужно было следовать. Поэтому сайт отличается от макета",
+    "type": "Заказ (Новый сайт)",
+    "using": ["devicon-javascript-plain", "devicon-tailwindcss-plain"],
+    "filters": ["Tailwind CSS", "Vanilla JS", "JavaScript"],
+    "links": {
+      "Сайт": "https://thissasha.github.io/patriot_web/",
+      "Макет (Figma)": "https://www.figma.com/design/TddgqKLSGWQAAaiH5uBsOW/%D0%9C%D0%B5%D1%82%D0%B0%D0%BB--1-?node-id=9333-20464&p=f&t=slOtg4O4DTHeQ7hL-0",
+    }
+  },
+  {
+    "img": "/projects/spamai.jpg",
+    "title": "Spam AI",
+    "description": "Телеграм-бот, основанный на библиботеке g4f. Определяет тему сообщения(Обычное, политика, флуд и др.) и выполняет заданную админом команду",
+    "type": "Пет-проект",
+    "using": ["devicon-python-plain", "fab fa-telegram"],
+    "filters": ["Python", "Telegram", "Aiogram"],
+    "links": {}
+  },
+  {
+    "img": "/projects/metaparser.png",
+    "title": "Meta Parser",
+    "description": "Фронтенд и бэкенд сайта, который получает meta с указанного сайта, рисует дерево субстраниц и выводит всё красивыми картинками",
+    "type": "Заказ (Новый сайт)",
+    "using": ["devicon-python-plain", "devicon-javascript-plain"],
+    "filters": ["Python", "Javascript", "Vanilla JS", "Vanilla CSS", "FastAPI"],
+    "links": { "Сайт": "http://193.160.208.54:8000/" }
+  },
+  {
+    "img": "/projects/math.png",
+    "title": "Math",
+    "description": "Это мой телеграм-канал на тему математики. Это также мой проект, поэтому он здесь",
+    "type": "Telegram-канал",
+    "using": ["fab fa-telegram"],
+    "filters": ["Telegram"],
+    "links": { "Канал": "https://t.me/thisMath" }
+  },
+  {
+    "img": "/projects/menunova.png",
+    "title": "Menu Nova",
+    "description": "Проект для кафе и ресторанов. Онлайн меню и заказ, быстрая настройка под конкретный ресторан (Планирую переписать на Vue/React)",
+    "type": "Пет-проект",
+    "using": ["devicon-python-plain", "devicon-javascript-plain"],
+    "filters": ["Python", "Javascript", "Vanilla JS", "Vanilla CSS"],
+    "links": { "Github": "https://github.com/menuNova", "Главная страница": "https://menuNova.github.io/index" }
+  },
+]
