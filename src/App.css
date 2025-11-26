@@ -134,7 +134,7 @@ body {
 
 /* HEADER */
 .header {
-    background: url('/header/bg.png');
+    background: url('/header/bg.webp');
     background-attachment: fixed;
     background-position: center;
     will-change: backhround-size;
@@ -144,7 +144,7 @@ body {
 
 @media (orientation: portrait) {
     .header {
-        background: url('/header/bg-mobile.png');
+        background: url('/header/bg-mobile.webp');
     }
 }
 
