@@ -156,4 +156,45 @@ export const projects: ProjectsType = [
     "filters": ["Python", "Javascript", "Vanilla JS", "Vanilla CSS"],
     "links": { "Github": "https://github.com/menuNova", "Главная страница": "https://menuNova.github.io/index" }
   },
+  {
+    "img": "/projects/coffurejockey/preview.png",
+    "title": "Coiffure Jockey",
+    "description": "ТЗ: Дан Wordpress шаблон и старый сайт. Задача в стиле шаблона перенести весь контент с сайта",
+    "type": "Заказ (Копия + доработка)",
+    "using": ["devicon-tailwindcss-plain", "devicon-javascript-plain"],
+    "filters": ["Javascript", "Vanilla JS", "Tailwind CSS"],
+    "links": { "Github": "https://github.com/thisSasha/coiffurejockey" }
+  },
+  {
+    "img": "/projects/medexpo/preview.png",
+    "title": "Medexpo",
+    "description": "Копия сайта для переноса с Wordpress",
+    "type": "Заказ (Копия)",
+    "using": ["devicon-tailwindcss-plain", "devicon-javascript-plain"],
+    "filters": ["Javascript", "Vanilla JS", "Tailwind CSS"],
+    "links": { "Github": "https://github.com/thisSasha/medexpo_copy" }
+  },
+  {
+    "img": "/projects/sparkline/preview.png",
+    "title": "Sparkline",
+    "description": "Вёрстка по макету .png",
+    "type": "Заказ (Новый сайт)",
+    "using": ["devicon-tailwindcss-plain", "devicon-javascript-plain"],
+    "filters": ["Javascript", "Vanilla JS", "Tailwind CSS"],
+    "links": {
+      "Сайт": "https://thisSasha.github.io/sparkline",
+      "Макет": "/projects/sparkline/layout.png"
+    }
+  },
+  {
+    "img": "/projects/digiqole_copy/preview.png",
+    "title": "Digiqole Newspaper",
+    "description": "Вёрстка wp шаблона",
+    "type": "Заказ (Копия сайта)",
+    "using": ["devicon-tailwindcss-plain", "devicon-javascript-plain"],
+    "filters": ["Javascript", "Vanilla JS", "Tailwind CSS"],
+    "links": {
+      "Сайт": "https://github.com/thisSasha/digiqole-newspaper_copy",
+    }
+  },
 ]
