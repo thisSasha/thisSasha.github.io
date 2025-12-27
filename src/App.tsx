@@ -1,18 +1,35 @@
-import { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { Routes, Route, Link } from 'react-router-dom'
 import './App.css'
 import { Portfolio } from './pages/Portfolio.tsx'
 import { NotFound } from './pages/NotFound.tsx'
 import { useLenis } from './hooks/useLenis.ts'
+import { RefsContext } from './context/RefsContext.tsx'
 
-export function to_id(id: string) {
-  const el = document.getElementById(id);
-  if (el) el.scrollIntoView({ behavior: "smooth" });
+export function to_id(ref: React.RefObject<HTMLElement | null>) {
+  if (!ref.current) return;
+  requestAnimationFrame(() => {
+    ref.current?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  });
+}
+
+export function useRefs() {
+  const portfolio = useRef<HTMLElement | null>(null);
+  const contacts = useRef<HTMLDivElement | null>(null);
+  const stack = useRef<HTMLDivElement | null>(null);
+  const about = useRef<HTMLElement | null>(null);
+
+
+  return { portfolio, contacts, about, stack };
 }
 
 function App() {
   useLenis();
   const [ready, setReady] = useState(false)
+  const refs = useRefs()
 
   useEffect(() => {
     const imgs = Array.from(document.images)
@@ -46,13 +63,13 @@ function App() {
     )
   else
     return (
-      <>
+      <RefsContext.Provider value={refs}>
         <Routes>
           <Route path="/" element={<Portfolio />} />
           <Route path="/me" element={<Portfolio />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
-      </>
+      </RefsContext.Provider>
     )
 }
 

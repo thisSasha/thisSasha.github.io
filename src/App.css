@@ -71,20 +71,37 @@ body {
 }
 
 .container {
-    @apply lg:w-[96%] w-full mx-auto max-w-[1400px];
+    @apply w-[94%] md:w-full mx-auto max-w-[1400px];
 }
 
 .glass {
+    @apply overflow-hidden lg:rounded-4xl;
     --bg: rgba(255, 255, 255, 0.08);
     --strength: 1;
-    @apply bg-[var(--bg)] overflow-hidden lg:rounded-4xl;
+    background: var(--bg);
     backdrop-filter: blur(calc(12px * var(--strength))) saturate(calc(180% * var(--strength)));
     -webkit-backdrop-filter: blur(calc(12px * var(--strength))) saturate(calc(180% * var(--strength)));
     border: 1px solid color-mix(in srgb, var(--color-fg) calc(20% * var(--strength)), transparent);
+    transition: 300ms;
     box-shadow:
         inset -1px -1px rgba(255, 255, 255, calc(0.15 * var(--strength))),
         inset 1px 1px rgba(255, 255, 255, calc(0.05 * var(--strength))),
         0 4px 30px rgba(0, 0, 0, calc(0.25 * var(--strength)));
+}
+
+@media (orientation: landscape) {
+    .glass-landscape {
+        @apply bg-[var(--bg)] overflow-hidden lg:rounded-4xl;
+        --bg: rgba(150, 150, 150, 0.08);
+        --strength: 1.5;
+        backdrop-filter: blur(calc(12px * var(--strength))) saturate(calc(180% * var(--strength)));
+        -webkit-backdrop-filter: blur(calc(12px * var(--strength))) saturate(calc(180% * var(--strength)));
+        border: 1px solid color-mix(in srgb, var(--color-fg) calc(20% * var(--strength)), transparent);
+        box-shadow:
+            inset -1px -1px rgba(255, 255, 255, calc(0.15 * var(--strength))),
+            inset 1px 1px rgba(255, 255, 255, calc(0.05 * var(--strength))),
+            0 4px 30px rgba(0, 0, 0, calc(0.25 * var(--strength)));
+    }
 }
 
 
@@ -124,6 +141,10 @@ body {
     background-size: 110%;
 }
 
+.decor {
+    @apply select-none;
+}
+
 @media (max-width: 768px) {
     .decor {
         display: none;
@@ -133,32 +154,42 @@ body {
 
 
 /* HEADER */
-.header {
-    background: url('/header/bg.webp');
+.header::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: var(--bg);
     background-attachment: fixed;
     background-position: center;
+    background-size: cover;
     will-change: backhround-size;
     animation: header__init 2600ms forwards ease-out;
-    background-size: cover;
 }
 
+
 @media (orientation: portrait) {
-    .header {
-        background: url('/header/bg-mobile.webp');
+    .header::before {
+        background: var(--bg-mobile);
+        background-size: cover;
+        animation: none;
     }
 }
 
 @keyframes header__init {
     from {
-        background-size: 160%;
+        background-position: center;
+        background-size: 110%;
     }
 
     40% {
-        background-size: 160%;
+        background-position: center;
+        background-size: 110%;
     }
 
     to {
-        background-size: 180%;
+        background-position: center;
+        background-size: 130%;
     }
 }
 
@@ -226,7 +257,7 @@ body {
 }
 
 .header__button {
-    @apply lg:px-9 lg:py-4 px-6 py-3 border-2 text-base md:text-xl border-fg rounded-full bg-transparent text-fg hover:bg-fg hover:text-fg-reverse hover:cursor-pointer font-medium
+    @apply lg:px-9 lg:py-4 px-6 text-center py-3 border-2 text-base md:text-xl border-fg rounded-full bg-transparent text-fg hover:bg-fg hover:text-fg-reverse hover:cursor-pointer font-medium
 }
 
 .navbar {
@@ -239,4 +270,22 @@ body {
 
 .navbar__link {
     @apply cursor-pointer transition duration-300 hover:text-accent-light;
+}
+
+.decor-disc {
+    @apply pl-4 relative;
+}
+
+.decor-disc::before {
+    content: '';
+    @apply aspect-square w-[8px] rounded-full bg-current block absolute left-0 top-1/2 -translate-y-1/2;
+}
+
+.stack__card {
+    backdrop-filter: blur(0);
+}
+
+
+.stack__card:hover {
+    --bg: rgba(255, 255, 255, 0.12);
 }

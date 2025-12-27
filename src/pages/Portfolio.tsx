@@ -1,9 +1,12 @@
 import { useEffect, useRef, useState } from "react";
 import { projects } from "../data/projects";
-import { MainHeader } from "../components/MainHeader";
-import { MainNav } from "../components/MainNav";
-import { MainAbout } from "../components/MainAbout";
-import { MainProjects } from "../components/MainProjects";
+import { Header } from "../components/pagePortfolio/Header";
+import { Nav } from "../components/pagePortfolio/Nav";
+import { About } from "../components/pagePortfolio/About";
+import { Projects } from "../components/pagePortfolio/Projects";
+import { Contacts } from "../components/sections/Contacts";
+import { Stack } from "../components/pagePortfolio/Stack";
+import { Footer } from "../components/sections/Footer";
 
 type Props = {};
 
@@ -60,10 +63,13 @@ export function Portfolio(props: Props) {
 
     return (
         <>
-            <MainHeader></MainHeader>
-            <MainNav></MainNav>
-            <MainAbout></MainAbout>
-            <MainProjects projects={projects}></MainProjects>
+            <Header></Header>
+            <Nav></Nav>
+            <About></About>
+            <Projects projects={projects}></Projects>
+            <Contacts></Contacts>
+            <Stack></Stack>
+            <Footer></Footer>
         </>
     );
 }
