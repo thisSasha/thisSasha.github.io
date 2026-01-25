@@ -41,8 +41,8 @@ export const projects: ProjectsType = [
     "title": "Fin-nal",
     "description": "Сайт-лендинг для компании ООО 'Финансы и налоги'",
     "type": "Заказ (Лендинг)",
-    "using": ["devicon-javascript-plain"],
-    "filters": ["Vanilla JS", "JavaScript", "Vanilla CSS"],
+    "using": ["devicon-javascript-plain", "devicon-tailwindcss-plain"],
+    "filters": ["Vanilla JS", "JavaScript", "Tailwind CSS"],
     "links": { "Сайт": "https://fin-nal.by" }
   },
   {
@@ -196,5 +196,17 @@ export const projects: ProjectsType = [
     "links": {
       "Сайт": "https://github.com/thisSasha/digiqole-newspaper_copy",
     }
+  },
+  {
+    "img": "/projects/rubenhair/preview.png",
+    "title": "Rubenhair Copy",
+    "description": "Копия с Wordpress на html",
+    "type": "Заказ (Копия сайта)",
+    "using": ["devicon-tailwindcss-plain", "devicon-javascript-plain"],
+    "filters": ["Javascript", "Vanilla JS", "Tailwind CSS"],
+    "links": { 
+      "Сайт": "https://github.com/thisSasha/rubenhair_copy",
+      "Оригинал": "https://rubenhair.eu"  
+     }
   },
 ]
