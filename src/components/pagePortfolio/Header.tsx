@@ -21,7 +21,7 @@ export function Header(props: Props) {
                 ].join(" ")}
             >
                 <div className="p-6 flex flex-col items-center justify-center gap-18">
-                    <h1 className="text-h1 font-header font-semibold"><span className="decor">&#123;</span> <small className="decor">Host: </small>ThisSasha <span className="decor">&#125;</span></h1>
+                    <h1 className="text-h1 font-header font-semibold"><span className="decor">&#123;</span> <small className="decor">Host: </small>Sasha <span className="decor">&#125;</span></h1>
                     <div className="flex items-stretch flex-col lg:flex-row gap-4 lg:gap-8 justify-center w-full">
                         <button onClick={() => to_id(refs.portfolio)} className="header__button">Портфолио</button>
                         <button onClick={() => to_id(refs.stack)} className="header__button">Стек</button>

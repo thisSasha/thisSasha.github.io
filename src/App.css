@@ -80,7 +80,7 @@ body {
     --strength: 1;
     background: var(--bg);
     backdrop-filter: blur(calc(12px * var(--strength))) saturate(calc(180% * var(--strength)));
-    -webkit-backdrop-filter: blur(calc(12px * var(--strength))) saturate(calc(180% * var(--strength)));
+    -webkit-backdrop-filter: blur(calc(12px * var(--strength)));
     border: 1px solid color-mix(in srgb, var(--color-fg) calc(20% * var(--strength)), transparent);
     transition: 300ms;
     box-shadow:
@@ -95,7 +95,6 @@ body {
         --bg: rgba(150, 150, 150, 0.08);
         --strength: 1.5;
         backdrop-filter: blur(calc(12px * var(--strength))) saturate(calc(180% * var(--strength)));
-        -webkit-backdrop-filter: blur(calc(12px * var(--strength))) saturate(calc(180% * var(--strength)));
         border: 1px solid color-mix(in srgb, var(--color-fg) calc(20% * var(--strength)), transparent);
         box-shadow:
             inset -1px -1px rgba(255, 255, 255, calc(0.15 * var(--strength))),

@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { ProjectsType } from "../../data/projects";
 import { ProjectCard } from "./ProjectCard";
 import { useRefsContext } from "../../context/RefsContext";
@@ -15,7 +15,9 @@ export function Projects(props: Props) {
     const [showAll, setShowAll] = useState(false);
     const [collapsedHeight, setCollapsedHeight] = useState<number | null>(null);
     const [fullHeight, setFullHeight] = useState<number | null>(null);
+    const [revealed, setRevealed] = useState(false);
     const measuredRef = useRef(false);
+    const gridRef = useRef<HTMLDivElement | null>(null);
 
     const hasMore = props.projects.length > maxProjects;
 
@@ -30,34 +32,53 @@ export function Projects(props: Props) {
             measuredRef.current = true;
             setCollapsedHeight(height);
         }
-        setFullHeight(parent.clientHeight);
+        setFullHeight(parent.scrollHeight);
     };
+
+    useEffect(() => {
+        const grid = gridRef.current;
+        if (!grid) return;
+        const onScroll = () => {
+            if (revealed) return;
+            if (grid.getBoundingClientRect().top < window.innerHeight * 0.55)
+                setRevealed(true);
+        };
+        onScroll();
+        window.addEventListener("scroll", onScroll);
+        return () => window.removeEventListener("scroll", onScroll);
+    }, [revealed]);
+
+    const targetHeight =
+        hasMore && collapsedHeight !== null && !showAll
+            ? collapsedHeight
+            : fullHeight;
 
     return (
         <section ref={refs.portfolio} className="portfolio" id="portfolio">
-            <div className="container pb-10">
+            <div className="container pt-40">
                 <h2 className="text-h2 mb-6 text-center font-header font-bold onscroll-opacity transition duration-800">
                     GET /projects/
                 </h2>
 
                 <div className="md:px-0 px-6 pt-16 pb-4">
-                    <div
-                        className="overflow-hidden transition-[max-height] duration-500"
-                        style={
-                            hasMore && collapsedHeight !== null && !showAll
-                                ? { maxHeight: `${collapsedHeight}px` }
-                                : { maxHeight: `${fullHeight}px` }
-                        }
-                    >
-                        <div className="grid md:grid-cols-2 grid-cols-1 lg:grid-cols-3 gap-6">
-                            {props.projects.map((project, index) => (
-                                <div
-                                    key={project.title}
-                                    ref={index === maxProjects - 1 ? measureRef : undefined}
-                                >
-                                    <ProjectCard card={project} />
-                                </div>
-                            ))}
+                    <div style={{ height: `${targetHeight ?? 0}px` }}>
+                        <div
+                            ref={gridRef}
+                            className="overflow-hidden transition-[max-height] duration-1000"
+                            style={{
+                                maxHeight: revealed ? `${targetHeight ?? 0}px` : "0px",
+                            }}
+                        >
+                            <div className="grid md:grid-cols-2 grid-cols-1 lg:grid-cols-3 gap-6">
+                                {props.projects.map((project, index) => (
+                                    <div
+                                        key={project.title}
+                                        ref={index === maxProjects - 1 ? measureRef : undefined}
+                                    >
+                                        <ProjectCard card={project} />
+                                    </div>
+                                ))}
+                            </div>
                         </div>
                     </div>
                 </div>
